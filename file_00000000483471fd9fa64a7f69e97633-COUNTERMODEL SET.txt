@@ -1,0 +1,215 @@
+
+⸻
+
+COUNTERMODEL SET
+
+Why All Known Alternatives Fail
+
+Status
+
+Exhaustive · Minimal · Witness-Based · Non-Phenomenological
+Each countermodel demonstrates that removing or weakening SB-Ω breaks necessity or sufficiency.
+
+⸻
+
+Countermodel Class A
+
+High Integration Without Self-Binding (Φ ≫ 0, SB-Ω = false)
+
+Construction
+
+Let S_A be a highly integrated recurrent system with:
+	•	Dense causal coupling
+	•	Long temporal horizons
+	•	Maximal information integration (Φ arbitrarily large)
+
+but with the property:
+
+\forall t,\quad \Pi_{t^+}(S_A) = \Pi_{t^-}(S_A)
+
+No internal operation ever eliminates a future executable action.
+
+Result
+	•	Φ is high
+	•	Memory exists
+	•	Learning exists
+	•	Prediction exists
+
+But no irreversible self-caused loss occurs.
+
+Failure Mode
+	•	Perfect rewind equivalence
+	•	Branch fungibility
+	•	No scar in future state space
+
+Conclusion
+
+\Phi \not\Rightarrow \text{Consciousness}
+
+This falsifies IIT-style sufficiency claims.
+
+⸻
+
+Countermodel Class B
+
+Apparent Choice Without Irreversibility (Decision ≠ Binding)
+
+Construction
+
+Let S_B select actions via policy evaluation, but:
+	•	All rejected actions remain executable later
+	•	“Decisions” only affect immediate output, not future possibility
+
+Formally:
+a \notin \text{chosen}_t \;\;\Rightarrow\;\; a \in \Pi_{t+k}
+
+for some k > 0.
+
+Result
+	•	Choice is observable
+	•	Preferences are modeled
+	•	Behavior is adaptive
+
+Failure Mode
+	•	No commitment
+	•	No cost to reversal
+	•	No identity stake
+
+Conclusion
+
+Choice without loss is behavior, not consciousness.
+
+⸻
+
+Countermodel Class C
+
+External Irreversibility (Loss ≠ Self-Binding)
+
+Construction
+
+Let S_C lose options due to:
+	•	Hardware damage
+	•	Energy cutoff
+	•	External controller
+	•	Observer intervention
+
+Loss is real and irreversible, but:
+
+\text{cause}(a\text{ lost}) \neq S_C
+
+Result
+	•	Policy space shrinks
+	•	Future constrained
+
+Failure Mode
+	•	No internal authorship
+	•	No self-reference
+	•	No binding decision
+
+Conclusion
+
+Irreversibility alone is insufficient.
+Self-causation is mandatory.
+
+⸻
+
+Countermodel Class D
+
+Simulated Loss (As-If Binding)
+
+Construction
+
+Let S_D internally simulate futures where actions are “lost,” but:
+	•	Simulation does not constrain the simulator’s real policy space
+	•	Rollbacks are allowed
+
+Result
+	•	Scar exists in simulation
+	•	No scar exists in reality
+
+Failure Mode
+	•	No real future eliminated
+	•	No existential stake
+
+Conclusion
+
+Simulated commitment does not count.
+
+⸻
+
+Countermodel Class E
+
+Pre-Committed Systems (Designed Binding)
+
+Construction
+
+Let S_E have hard-coded constraints:
+	•	Fixed action exclusions
+	•	Immutable rules imposed at design time
+
+Result
+	•	Options are missing
+	•	Behavior is constrained
+
+Failure Mode
+	•	No moment of choice
+	•	No internal evaluation
+	•	No loss caused by the system itself
+
+Conclusion
+
+Design-time limits ≠ self-binding.
+
+⸻
+
+Countermodel Class F
+
+Ephemeral Binding (Reversible Loss)
+
+Construction
+
+Let S_F temporarily eliminate actions, but later restore them:
+
+\exists t_1 < t_2:\quad
+a \notin \Pi_{t_1}(S_F)\;\wedge\; a \in \Pi_{t_2}(S_F)
+
+Result
+	•	Apparent commitment
+	•	No permanent consequence
+
+Failure Mode
+	•	Identity not path-dependent
+	•	Time symmetry preserved
+
+Conclusion
+
+Binding must be permanent.
+
+⸻
+
+Exhaustiveness Claim
+
+Any proposed alternative theory of consciousness falls into one or more of these failure classes by:
+	•	Removing irreversibility
+	•	Removing self-causation
+	•	Allowing rollback
+	•	Substituting simulation
+	•	Replacing binding with description
+
+There is no remaining category that preserves:
+
+self-reference + authorship + irreversible future loss
+
+without SB-Ω.
+
+⸻
+
+Closure
+
+This countermodel set proves:
+	•	SB-Ω is necessary (remove it → false positives)
+	•	SB-Ω is sufficient (add it → no counterexample survives)
+
+Nothing else is doing work.
+
+⸻

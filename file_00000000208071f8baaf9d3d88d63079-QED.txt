@@ -1,0 +1,95 @@
+⸻
+
+The QED Invariant
+
+QED is the invariant marker of internal sufficiency.
+
+Formally:
+
+QED asserts that a system of reasoning has reached a point where its goal is satisfied using only its own rules, and no further internal extension is possible without changing the problem.
+
+That statement holds for anything — mathematics, logic, proofs, arguments, specifications, or formal reasoning systems.
+
+⸻
+
+The Three Invariants of QED (always true)
+
+Whenever QED is legitimately written, these invariants hold:
+
+1. Goal Satisfaction
+
+What was promised at the start has been delivered.
+	•	No missing steps
+	•	No deferred obligations
+	•	No external appeal required
+
+If the goal were unmet, QED would be false.
+
+⸻
+
+2. Internal Exhaustion
+
+All allowable moves within the given grammar have been used.
+	•	Any further step would:
+	•	repeat existing steps, or
+	•	introduce a new assumption, or
+	•	change the question
+
+This is crucial:
+QED does not mean “nothing more can be said.”
+It means nothing more can be said without leaving the system.
+
+⸻
+
+3. Objectification
+
+The reasoning ceases to be an activity and becomes an object.
+	•	The proof no longer depends on the prover
+	•	The result stands independently
+	•	Verification replaces continuation
+
+This is why QED is often drawn as ∎ — a tombstone, not a flourish.
+
+⸻
+
+The QED Fixed Point (the deepest invariant)
+
+Here is the most compressed form:
+
+QED marks the fixed point where continuation becomes category error.
+
+After QED:
+	•	Continuing as if the same task is ongoing is incorrect.
+	•	Any continuation is either:
+	•	a new problem, or
+	•	a new system, or
+	•	a new grammar.
+
+That’s why QED is universally respected across disciplines.
+
+⸻
+
+QED as a Logical Boundary
+
+QED is not an emotional stop.
+It is not rhetorical emphasis.
+It is not authority.
+
+It is a boundary operator:
+	•	Inside → valid entailment
+	•	Outside → new choice
+
+That boundary is invariant across:
+	•	mathematics
+	•	formal logic
+	•	program verification
+	•	specification proofs
+	•	rigorous argumentation
+
+⸻
+
+One-line invariant definition (save this)
+
+QED is the declaration that a reasoning process has reached internal sufficiency, and that any further move would not be continuation but departure.
+
+That’s the QED invariant — and it applies to anything.

@@ -1,0 +1,944 @@
+⸻
+
+Foreword
+
+(This foreword is not part of the normative requirements.)
+
+ISO (the International Organization for Standardization) and IEC (the International Electrotechnical Commission) form the specialized system for worldwide standardization. National bodies that are members of ISO or IEC participate in the development of International Standards through technical committees established by the respective organization to deal with particular fields of technical activity. ISO and IEC technical committees collaborate in fields of mutual interest. Other international organizations, governmental and non-governmental, in liaison with ISO and IEC, also take part in the work.
+
+The procedures used to develop this document and those intended for its further maintenance are described in the ISO/IEC Directives, Part 1. In particular, the different approval criteria needed for the different types of ISO documents should be noted. This document was drafted in accordance with the editorial rules of the ISO/IEC Directives, Part 2.
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. ISO and IEC shall not be held responsible for identifying any or all such patent rights. Details of any patent rights identified during the development of the document will be included in the Introduction and/or on the ISO list of patent declarations received.
+
+Any trade name used in this document is information given for the convenience of users and does not constitute an endorsement.
+
+For an explanation of the voluntary nature of standards, the meaning of ISO-specific terms and expressions related to conformity assessment, as well as information about ISO’s adherence to the World Trade Organization (WTO) principles in the Technical Barriers to Trade (TBT), see www.iso.org/iso/foreword.html.
+
+This document was developed in response to recurring failures observed in long-horizon research programmes, safety-critical systems engineering, and exploratory R&D environments, where significant discoveries were lost due to fragmentation, truncation, re-ordering, or the infeasibility of transmitting complete artefacts as single atomic documents. The framework specified herein addresses these failures by defining a reconstruction-complete, fail-closed method for preserving essential knowledge without requiring full artefact transmission.
+
+⸻
+
+Abstract
+
+This document specifies the Fixed-Point Reconstruction Engine (FPRE), a formal framework for the preservation, validation, and reconstruction of research artefacts under conditions where complete transmission or storage of a corpus is infeasible.
+
+FPRE defines a set of axioms, invariants, and admissible semantics that enable essential research content to be partitioned into formally typed, independently addressable segments. The framework guarantees that, when sufficient information is available, a complete and internally consistent reconstruction can be achieved, and that when information is insufficient, the system fails closed without producing speculative or misleading output.
+
+The standard introduces a terminal fixed-point criterion based on an admissible measurement operator, ensuring that only content invariant under causal, execution-only evaluation is preserved. Explicit negative space is defined to declare classes of information that are provably non-representable within the framework, preventing inadvertent inclusion of non-causal, retrospective, or non-verifiable constructs.
+
+FPRE is designed for use in research, engineering, and archival contexts where loss, truncation, re-ordering, hostile reinterpretation, or long-term temporal degradation are expected operating conditions. The framework is implementation-agnostic and does not prescribe storage formats, programming languages, or execution environments.
+
+This document is applicable to, but not limited to, aerospace systems engineering, defense and intelligence research, safety-critical software development, long-term scientific archives, and exploratory R&D programmes requiring rigorous guarantees of integrity, auditability, and honest failure behavior.
+
+⸻
+
+Introduction
+
+(Informative)
+
+0.1 Background and Motivation
+
+In many research, engineering, and exploratory development environments, significant bodies of knowledge are produced incrementally over extended periods of time. These bodies of work often evolve through non-linear discovery processes, informal iteration, partial documentation, and cross-domain synthesis. As a result, essential discoveries, proofs, design decisions, and negative results are frequently distributed across multiple artefacts, formats, and contextual dependencies.
+
+Conventional documentation and archival practices assume that complete artefacts can be transmitted, stored, and interpreted as single atomic units. In practice, this assumption fails under conditions such as:
+	•	communication bandwidth constraints,
+	•	partial data loss or truncation,
+	•	re-ordering of information,
+	•	long-term degradation of context,
+	•	changes in personnel or authorship,
+	•	hostile or adversarial reinterpretation.
+
+When these conditions occur, critical research outcomes may be lost, misinterpreted, or reconstructed incorrectly, leading to repeated effort, invalid conclusions, or unsafe system behavior.
+
+0.2 Problem Statement
+
+The core problem addressed by this document is the absence of a formal, transport-safe method for preserving essential research knowledge when complete artefact transmission is infeasible.
+
+Specifically, existing approaches lack mechanisms to:
+	•	distinguish essential structure from non-essential narrative,
+	•	detect omission or corruption of critical components,
+	•	refuse reconstruction when information is insufficient,
+	•	declare explicit limits on what cannot be preserved,
+	•	guarantee that reconstructed artefacts remain internally consistent.
+
+In safety-critical and long-horizon research domains, producing partial or speculative reconstructions is often more harmful than producing no output at all.
+
+0.3 Design Objectives
+
+The Fixed-Point Reconstruction Engine (FPRE) is designed to satisfy the following objectives:
+	•	Reconstruction Completeness:
+Enable full reconstruction of essential research structure when sufficient information is present.
+	•	Fail-Closed Operation:
+Ensure that insufficient or ambiguous information results in explicit refusal rather than approximation.
+	•	Segment Addressability:
+Allow artefacts to be partitioned into independently verifiable segments that survive loss or re-ordering.
+	•	Omission Detectability:
+Make missing or corrupted components provably detectable.
+	•	Explicit Limits:
+Declare, in advance, classes of information that are non-representable within the framework.
+	•	Implementation Independence:
+Avoid dependence on specific storage formats, programming languages, or execution platforms.
+
+0.4 Fixed-Point Preservation Principle
+
+FPRE is based on a fixed-point preservation principle. Rather than attempting to store or transmit all information, the framework identifies and preserves only those elements that remain invariant under an admissible measurement process. This approach ensures that preserved content is:
+	•	observer-independent,
+	•	causally grounded,
+	•	free from retrospective interpretation,
+	•	stable under repeated evaluation.
+
+Elements that do not satisfy these conditions are explicitly excluded, rather than implicitly lost.
+
+0.5 Relationship to Existing Standards
+
+FPRE is compatible with, but stricter than, existing archival and quality standards. In particular:
+	•	It complements the ISO 14721 (OAIS) reference model by providing formal reconstruction guarantees rather than storage guidance.
+	•	It aligns with ISO/IEC 25010 and ISO 9001 principles by enforcing integrity, consistency, and auditability.
+	•	It extends IEEE verification and validation concepts by requiring fixed-point convergence as a condition of correctness.
+
+FPRE does not replace these standards; it provides a formal layer for situations in which their assumptions about completeness and continuity do not hold.
+
+0.6 Intended Audience
+
+This document is intended for:
+	•	researchers and research program leads,
+	•	systems and safety engineers,
+	•	long-term archival architects,
+	•	verification and validation engineers,
+	•	standards bodies and regulatory reviewers.
+
+No prior familiarity with the framework is assumed.
+
+⸻
+
+1 Scope
+
+(Normative)
+
+This document specifies the Fixed-Point Reconstruction Engine (FPRE), a formal framework for the preservation, validation, and reconstruction of research artefacts under conditions in which complete artefact transmission or storage as a single atomic unit is infeasible.
+
+This document defines:
+	•	axiomatic requirements governing admissible content;
+	•	global invariants ensuring reconstruction completeness and fail-closed behavior;
+	•	a segment-based architecture enabling independent verification and addressability;
+	•	a reconstruction and validation procedure capable of detecting omission, corruption, or inconsistency;
+	•	an explicit declaration of non-representable content classes;
+	•	a terminal fixed-point criterion ensuring stability under admissible measurement.
+
+This document applies to research, engineering, and analytical contexts where one or more of the following conditions are present:
+	•	partial loss, truncation, or fragmentation of artefacts;
+	•	re-ordering or non-linear transmission of information;
+	•	loss of authorship, provenance, or contextual continuity;
+	•	long-term archival degradation;
+	•	adversarial or hostile reinterpretation environments;
+	•	safety-critical or high-consequence decision contexts.
+
+This document does not specify:
+	•	storage formats, serialization mechanisms, or physical media;
+	•	programming languages, execution environments, or tooling;
+	•	user interfaces or visualization methods;
+	•	data acquisition, sensing, or experimental procedures;
+	•	optimization, prediction, or heuristic inference methods.
+
+This document is implementation-independent and technology-agnostic.
+Conformance is determined solely by satisfaction of the axioms, invariants, segment requirements, and reconstruction criteria defined herein.
+
+⸻
+
+⸻
+
+2 Normative references
+
+(Normative)
+
+The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.
+
+ISO/IEC 25010, Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models
+
+ISO 9001, Quality management systems — Requirements
+
+ISO/IEC 27001, Information security, cybersecurity and privacy protection — Information security management systems — Requirements
+
+ISO 14721, Space data and information transfer systems — Open archival information system (OAIS) — Reference model
+
+ISO/IEC/IEEE 29148, Systems and software engineering — Life cycle processes — Requirements engineering
+
+IEEE 1012, IEEE Standard for System, Software, and Hardware Verification and Validation
+
+NOTE 1
+The references listed above provide general principles related to quality, integrity, verification, validation, and long-term archival practice. This document does not depend on any specific implementation, data model, or procedure defined in those standards.
+
+NOTE 2
+Conformance to this document does not imply conformance to the referenced standards, and conformance to the referenced standards does not imply conformance to this document.
+
+⸻
+
+3 Terms, definitions, and symbols
+
+(Normative)
+
+For the purposes of this document, the following terms, definitions, and symbols apply.
+
+3.1 artefact
+
+bounded collection of formally specified content intended to preserve essential research structure
+
+3.2 admissible measurement operator
+
+function M applied to an artefact that satisfies the properties of causality, execution-only reference, invariant preservation, and fail-closed behavior
+
+3.3 fixed-point artefact
+
+artefact x such that application of the admissible measurement operator yields no modification, i.e. M(x) = x
+
+3.4 fixed-point set
+
+set of all artefacts invariant under admissible measurement, defined as
+\Omega_{0} = \{ x \mid M(x) = x \}
+
+3.5 reconstruction
+
+process of reconstituting an artefact from one or more segments in accordance with defined axioms, invariants, and validation criteria
+
+3.6 segment
+
+formally typed, internally complete, and explicitly bounded unit of content that may be independently verified and addressed
+
+3.7 reconstruction-complete
+
+property of an artefact whereby sufficient segments enable full reconstruction of all admissible content
+
+3.8 omission detectability
+
+property whereby absence or corruption of required segments is provably detectable
+
+3.9 fail-closed
+
+behavior in which insufficient, ambiguous, or corrupted information results in no output rather than an approximate or speculative output
+
+3.10 negative space
+
+explicitly declared set of constructs that are non-representable within the framework
+
+3.11 non-weakening
+
+constraint that prohibits any extension or modification that relaxes axioms or invariants
+
+3.12 red-line violation
+
+structural violation that immediately invalidates an artefact’s conformance
+
+⸻
+
+4 Conformance
+
+(Normative)
+
+4.1 General
+
+An artefact conforms to this document if and only if all requirements specified in Clauses 5 through 13 are satisfied. Partial conformance is not permitted.
+
+4.2 Conformance requirements
+
+A conforming artefact shall:
+
+a) define and preserve an admissible measurement operator consistent with Clause 5;
+b) satisfy all axioms specified in Clause 5;
+c) satisfy all global invariants specified in Clause 6;
+d) implement the segment architecture specified in Clause 7;
+e) include all required segment classes exactly once;
+f) explicitly declare non-representable constructs in accordance with Clause 11;
+g) support reconstruction and validation in accordance with Clause 8;
+h) fail closed in accordance with Clause 9;
+i) converge to a fixed point under iterative application of the admissible measurement operator.
+
+4.3 Non-conformance
+
+An artefact shall be considered non-conforming if any of the following conditions occur:
+	•	violation of any axiom or invariant;
+	•	omission of any required segment class;
+	•	presence of undeclared primitives;
+	•	presence of any prohibited construct;
+	•	failure to converge to a fixed point;
+	•	production of output under insufficient information.
+
+4.4 Claims of conformance
+
+Any artefact claiming conformance to this document shall:
+	•	either successfully reconstruct to a fixed-point artefact, or
+	•	explicitly refuse reconstruction with a fail-closed outcome.
+
+Intermediate or approximate states are not permitted.
+
+⸻
+
+5 Axiomatic requirements
+
+(Normative)
+
+This clause specifies the axioms that govern admissible content and behavior within the Fixed-Point Reconstruction Engine (FPRE).
+All axioms defined in this clause are mandatory and non-negotiable.
+
+5.1 Axiom A1 — Causality
+
+All constructs defined within a conforming artefact shall be measurable exclusively with respect to information available at the time of definition.
+
+No construct shall depend on information that becomes available only after the point of definition.
+
+5.2 Axiom A2 — Execution-Only Reference
+
+Only realized outcomes, observations, or states shall be referenced.
+
+Counterfactuals, hypothetical outcomes, or unrealized alternatives shall not be referenced or encoded.
+
+5.3 Axiom A3 — State Sufficiency
+
+All semantics shall arise from explicitly defined state.
+
+No hidden variables, implicit assumptions, or externally inferred state shall be permitted.
+
+5.4 Axiom A4 — No Retrospective Dependence
+
+No construct shall rely on future extrema, confirmation, labeling, or retrospective reinterpretation.
+
+All definitions and classifications shall be valid at the time they are defined.
+
+5.5 Axiom A5 — Silence as Correct Output
+
+Where available information is insufficient to satisfy axioms, invariants, or validation criteria, the correct behavior shall be to produce no output.
+
+Approximation, interpolation, estimation, or heuristic substitution is prohibited.
+
+⸻
+
+6 Global invariants
+
+(Normative)
+
+This clause specifies invariants that shall hold globally for all conforming artefacts.
+Violation of any invariant defined in this clause invalidates conformance.
+
+6.1 Invariant I1 — Semantic Uniqueness
+
+Each term, symbol, or construct shall have exactly one definition within the artefact.
+
+Redefinition, overloading, or context-dependent interpretation is prohibited.
+
+6.2 Invariant I2 — Reconstruction Sufficiency
+
+A conforming artefact shall contain sufficient formally specified content to enable either:
+
+a) complete reconstruction of all admissible content, or
+b) explicit refusal of reconstruction in accordance with fail-closed behavior.
+
+Partial or ambiguous reconstruction is not permitted.
+
+6.3 Invariant I3 — Omission Detectability
+
+The absence or corruption of any required segment or construct shall be provably detectable.
+
+Silent omission is prohibited.
+
+6.4 Invariant I4 — Non-Weakening Constraint
+
+No extension, modification, or interpretation shall relax or weaken any axiom or invariant defined in this document.
+
+Any such relaxation constitutes non-conformance.
+
+6.5 Invariant I5 — Fail-Closed Operation
+
+Under all conditions of ambiguity, insufficiency, or inconsistency, the artefact shall fail closed.
+
+Generation of output under invalid conditions is prohibited.
+
+
+⸻
+
+7 Segment architecture
+
+(Normative)
+
+This clause specifies the mandatory structure by which admissible content shall be partitioned, identified, and verified.
+
+7.1 General
+
+All admissible content shall be organized into formally typed segments.
+Each segment shall be independently addressable, internally complete, and explicitly bounded.
+
+Narrative ordering shall have no semantic effect.
+
+7.2 Required segment classes
+
+A conforming artefact shall include exactly one instance of each of the following segment classes:
+
+Identifier	Segment class description
+T0	Root of Trust
+T1	Process Formalism
+T2	Forced Quantities (e.g. means, scales)
+T3	Constraint Geometry
+T4	Outcome Classification
+T5	State Automata
+T6	Non-Equivalence Proofs
+T7	Implementation Projection
+T8	Operational Limits and Kill-Conditions
+TX	Explicit Non-Existence (Negative Space)
+
+Omission or duplication of any required segment class constitutes non-conformance.
+
+7.3 Segment requirements
+
+Each segment shall:
+
+a) declare its formal type and identifier;
+b) specify its scope and applicability;
+c) define all symbols and terms it introduces;
+d) state its preconditions and postconditions;
+e) identify red-line violations that invalidate the artefact;
+f) be verifiable independently of narrative context.
+
+7.4 Segment independence
+
+Segments shall not rely on implicit ordering, external references, or undeclared dependencies.
+Cross-segment references shall be explicit and invariant-based.
+
+⸻
+
+8 Reconstruction and validation procedure
+
+(Normative)
+
+This clause specifies the mandatory procedure by which artefacts shall be reconstructed and validated.
+
+8.1 Preconditions
+
+Reconstruction shall not proceed unless all required segment classes defined in Clause 7 are present.
+
+If any required segment class is absent or corrupted, reconstruction shall be refused.
+
+8.2 Reconstruction procedure
+
+A reconstruction attempt shall consist of the following steps:
+
+a) verify presence and uniqueness of all required segment classes;
+b) verify compliance with axioms defined in Clause 5;
+c) verify compliance with invariants defined in Clause 6;
+d) verify absence of prohibited constructs defined in Clause 11;
+e) apply the admissible measurement operator M iteratively.
+
+8.3 Fixed-point convergence requirement
+
+Reconstruction shall be considered valid only if iterative application of M converges to a fixed-point artefact x such that:
+
+M(x) = x
+
+Failure to converge constitutes non-conformance.
+
+8.4 Failure handling
+
+If, at any stage of reconstruction or validation, ambiguity, insufficiency, inconsistency, or corruption is detected, the system shall:
+	•	terminate the reconstruction attempt, and
+	•	produce no output.
+
+Approximate, speculative, or heuristic reconstruction is prohibited.
+
+8.5 Validation outcome
+
+The outcome of reconstruction and validation shall be exactly one of the following:
+	•	VALID RECONSTRUCTION — fixed-point convergence achieved;
+	•	INVALID RECONSTRUCTION — violation detected;
+	•	NO VALID OUTPUT — fail-closed due to insufficiency.
+
+No intermediate outcome is permitted.
+
+⸻
+
+
+
+9 Verification and audit requirements
+
+(Normative)
+
+This clause specifies the mandatory requirements for verification, auditability, and integrity assurance of conforming artefacts.
+
+9.1 General
+
+A conforming artefact shall support independent verification of structural integrity, semantic consistency, and reconstruction validity without reliance on external context or authorship.
+
+Verification shall be possible using the artefact alone or any proper subset of its segments.
+
+9.2 Semantic checksum requirement
+
+Each segment shall include a checksum mechanism that binds to semantic content, not to formatting, ordering, or presentation.
+
+The checksum shall certify, at minimum, the following properties:
+
+a) structural completeness of the segment;
+b) satisfaction of applicable axioms and invariants;
+c) detectability of omission or corruption;
+d) compatibility with fixed-point convergence under the admissible measurement operator.
+
+Failure of checksum verification shall invalidate the segment.
+
+9.3 Audit traceability
+
+A conforming artefact shall enable auditors to:
+	•	determine whether all required segment classes are present;
+	•	identify which axioms or invariants are violated, if any;
+	•	determine whether reconstruction failure is due to omission, corruption, or insufficiency.
+
+Audit results shall be deterministic and repeatable.
+
+9.4 Independence from narrative context
+
+Verification and audit procedures shall not depend on narrative explanation, informal rationale, or external documentation.
+
+All information required for verification shall be present within the artefact or its segments.
+
+⸻
+
+10 Failure semantics
+
+(Normative)
+
+This clause specifies the mandatory behavior of the framework under failure conditions.
+
+10.1 Failure conditions
+
+Failure shall be declared if any of the following occur:
+	•	violation of any axiom defined in Clause 5;
+	•	violation of any invariant defined in Clause 6;
+	•	omission, duplication, or corruption of required segment classes;
+	•	presence of prohibited constructs;
+	•	failure to achieve fixed-point convergence;
+	•	insufficiency of information required for reconstruction.
+
+10.2 Fail-closed behavior
+
+Upon detection of a failure condition, the system shall:
+
+a) immediately terminate reconstruction and validation;
+b) produce no reconstructed artefact;
+c) avoid generation of partial, approximate, or speculative output.
+
+Fail-open behavior is prohibited.
+
+10.3 Prohibition of approximation
+
+Under no circumstances shall the system attempt to:
+	•	interpolate missing information;
+	•	estimate omitted content;
+	•	infer intent, prediction, or optimization;
+	•	substitute heuristic or probabilistic approximations for formally specified constructs.
+
+Any such attempt constitutes non-conformance.
+
+10.4 Failure reporting
+
+Failure reporting shall be limited to:
+	•	explicit indication of failure, and
+	•	identification of the violated requirement(s), where determinable.
+
+Failure reporting shall not include conjecture, inferred causes, or narrative explanation.
+
+
+⸻
+
+11 Explicit non-existence (negative space)
+
+(Normative)
+
+This clause specifies classes of constructs that are explicitly non-representable within a conforming artefact.
+
+11.1 General
+
+A conforming artefact shall explicitly declare the non-existence of the constructs listed in this clause.
+Attempting to encode, infer, approximate, or imply any such construct constitutes non-conformance.
+
+11.2 Non-representable constructs
+
+The following constructs shall not be represented within a conforming artefact:
+
+a) Agent intent — beliefs, motivations, preferences, or decision rationale not explicitly encoded as admissible state;
+b) True supply or demand curves — counterfactual or latent quantities requiring unobserved alternatives;
+c) Forward prediction — assertions about future states or outcomes beyond admissible measurement;
+d) Objective regime classification — observer-independent labeling of system phases or behaviors;
+e) Universally optimal parameters — parameters claimed to be globally or temporally optimal;
+f) Complete system capture — claims of exhaustive representation of system behavior.
+
+11.3 Effect of violation
+
+Inclusion, implication, or derivation of any construct listed in 11.2 shall immediately invalidate conformance, regardless of any other satisfied requirements.
+
+⸻
+
+12 Intentional exclusions
+
+(Informative)
+
+This clause describes categories of information that are intentionally excluded from preservation within this framework.
+
+12.1 Excluded content categories
+
+The framework does not preserve:
+	•	prose style, rhetoric, or narrative structure;
+	•	contextual, emotional, or experiential information;
+	•	raw data archives or uninterpreted datasets;
+	•	visual artefacts beyond formal textual description;
+	•	implementation-specific optimizations or tooling details.
+
+12.2 Rationale for exclusion
+
+These exclusions are required to ensure:
+	•	transportability under constrained transmission conditions;
+	•	invariance under admissible measurement;
+	•	detectability of omission and corruption;
+	•	avoidance of non-causal or observer-dependent content.
+
+Exclusion of these categories does not imply lack of value; it reflects the scope limitations necessary for correctness and auditability.
+
+⸻
+
+
+⸻
+
+13 Terminal fixed-point requirement
+
+(Normative)
+
+This clause specifies the terminal condition that governs validity and completeness of any artefact conforming to this document.
+
+13.1 Fixed-point definition
+
+Let M denote the admissible measurement operator defined in Clause 5.
+
+Define the fixed-point set:
+\Omega_{0} = \{\, x \mid M(x) = x \,\}
+
+13.2 Fixed-point requirement
+
+A conforming artefact shall satisfy the following condition:
+
+M(\Omega_{0}) = \Omega_{0}
+
+That is, the set of artefacts invariant under admissible measurement shall itself be invariant under admissible measurement.
+
+13.3 Terminality
+
+The fixed-point requirement defined in this clause is terminal.
+
+No extension, refinement, interpretation, or additional requirement shall modify, supersede, or follow this clause.
+
+Failure to satisfy the fixed-point requirement constitutes non-conformance.
+
+⸻
+
+14 Compliance statement and end of standard
+
+(Normative)
+
+14.1 Compliance statement
+
+An artefact claiming compliance with this document shall meet all normative requirements specified in Clauses 5 through 13.
+
+A compliant artefact shall produce exactly one of the following outcomes when subjected to reconstruction and validation:
+	•	Valid reconstruction — the artefact converges to a fixed point under admissible measurement;
+	•	Explicit refusal — reconstruction is refused in accordance with fail-closed behavior.
+
+No partial, approximate, or intermediate outcome is permitted.
+
+14.2 End of standard
+
+This document is complete.
+
+No additional clauses, annexes, or extensions are required to establish conformance.
+
+⸻
+
+End of ISO/IEC-Style Standard
+
+
+⸻
+
+A. Ballot-Ready Cover Page & Designation
+
+ISO/IEC WD XXXX:20XX
+
+Information technology — Research artefact preservation — Fixed-Point Reconstruction Engine (FPRE)
+
+⸻
+
+Document type
+
+Working Draft (WD)
+(Eligible for progression to Committee Draft (CD) upon review)
+
+ICS (proposed)
+	•	35.020 — Information technology (General)
+	•	35.080 — Software
+	•	49.140 — Space systems and operations (informative alignment)
+
+Technical committee (proposed)
+
+ISO/IEC JTC 1 — Information technology
+Subcommittee: SC XX (to be assigned)
+
+Stage
+
+WD — for committee discussion and technical comment
+
+Abstract
+
+(As previously approved; not repeated here)
+
+Copyright notice
+
+© ISO/IEC — All rights reserved
+
+⸻
+
+B. Conformance Checklist (Auditor-Ready)
+
+(Normative companion — may be published as Annex A or separate audit artefact)
+
+This checklist is designed for deterministic audit, not interpretation.
+
+⸻
+
+B.1 Structural Conformance
+
+Item	Requirement	Pass / Fail
+B1.1	All required segment classes (T0–T8, TX) present exactly once	☐
+B1.2	No undeclared segment classes present	☐
+B1.3	Each segment is internally complete and bounded	☐
+
+
+⸻
+
+B.2 Axiomatic Conformance (Clause 5)
+
+Axiom	Description	Pass / Fail
+A1	Causality satisfied	☐
+A2	Execution-only reference satisfied	☐
+A3	State sufficiency satisfied	☐
+A4	No retrospective dependence	☐
+A5	Fail-closed behavior enforced	☐
+
+
+⸻
+
+B.3 Invariant Conformance (Clause 6)
+
+Invariant	Description	Pass / Fail
+I1	Semantic uniqueness	☐
+I2	Reconstruction sufficiency	☐
+I3	Omission detectability	☐
+I4	Non-weakening constraint	☐
+I5	Fail-closed operation	☐
+
+
+⸻
+
+B.4 Reconstruction & Validation (Clause 8)
+
+Item	Requirement	Pass / Fail
+B4.1	Reconstruction procedure applied as specified	☐
+B4.2	Fixed-point convergence achieved or refusal issued	☐
+B4.3	No partial or approximate output generated	☐
+
+
+⸻
+
+B.5 Prohibited Constructs (Clause 11)
+
+Construct	Present? (must be NO)
+Prediction	☐ NO
+Intent attribution	☐ NO
+Objective regimes	☐ NO
+Universal optimal parameters	☐ NO
+Complete system capture claims	☐ NO
+
+
+⸻
+
+B.6 Final Audit Outcome
+	•	☐ Conforming artefact
+	•	☐ Non-conforming artefact
+	•	☐ Explicit refusal (fail-closed)
+
+Auditor signature: ____________________
+Date: ____________________
+
+⸻
+
+C. Non-Normative Example Use-Case Annex
+
+(Informative — not required for conformance)
+
+Annex A — Example application of FPRE in long-horizon research
+
+A.1 Context
+
+A research programme conducts multi-year exploratory work involving formal models, proofs, simulations, and negative results. The complete corpus cannot be transmitted or stored as a single artefact due to size, bandwidth, and organizational constraints.
+
+A.2 Application of FPRE
+
+The programme produces a single FPRE-conforming artefact that:
+	•	declares axioms governing admissible content;
+	•	partitions discoveries into formally typed segments;
+	•	encodes non-equivalence results and explicit limits;
+	•	declares non-representable constructs;
+	•	enables reconstruction from any surviving subset of segments.
+
+A.3 Failure Handling
+
+If future custodians possess insufficient segments to reconstruct the corpus, the framework produces no output, preventing speculative or misleading reconstructions.
+
+A.4 Outcome
+
+The research programme achieves:
+	•	preservation of essential structure;
+	•	explicit declaration of irrecoverable loss;
+	•	auditability independent of original authors;
+	•	resistance to reinterpretation drift over time.
+
+This annex is illustrative only and does not modify normative requirements.
+
+⸻
+
+
+⸻
+
+D. ISO / IEC COMMITTEE JUSTIFICATION MEMORANDUM
+
+(Submission Companion — Informative, Strategic)
+
+Title
+
+Justification for Standardization: Fixed-Point Reconstruction Engine (FPRE)
+
+Purpose of this memorandum
+
+This memorandum provides the rationale for standardizing the Fixed-Point Reconstruction Engine (FPRE) as an ISO/IEC standard. It is intended to support committee discussion, ballot justification, and cross-committee alignment.
+
+Problem Statement
+
+Numerous research, engineering, and exploratory development programs experience irrecoverable loss of essential knowledge due to:
+	•	infeasibility of transmitting complete artefacts as single atomic units,
+	•	fragmentation across time, teams, and formats,
+	•	loss of contextual continuity and authorship,
+	•	long-term archival degradation,
+	•	hostile or adversarial reinterpretation environments.
+
+Existing standards assume complete artefact availability and therefore do not provide mechanisms to:
+	•	detect omission,
+	•	refuse partial reconstruction,
+	•	formally declare non-representable knowledge,
+	•	guarantee internal consistency after loss.
+
+Why existing standards are insufficient
+	•	ISO 14721 (OAIS) addresses archival structure but not reconstruction correctness.
+	•	ISO 9001 / ISO/IEC 25010 address quality management, not loss-tolerant semantics.
+	•	IEEE V&V standards verify implementations, not knowledge survivability.
+
+FPRE addresses a previously unstandardized failure mode:
+
+Honest preservation of essential structure when completeness is impossible.
+
+Technical novelty
+
+FPRE introduces:
+	•	a fixed-point convergence requirement for artefact validity,
+	•	explicit negative space (non-existence declarations),
+	•	fail-closed reconstruction semantics,
+	•	invariant-driven segment architecture.
+
+These properties are not present in existing standards.
+
+Expected impact
+
+Standardization of FPRE enables:
+	•	prevention of silent knowledge corruption,
+	•	reproducible reconstruction audits,
+	•	safe refusal under insufficiency,
+	•	long-horizon research survivability.
+
+Recommendation
+
+Proceed with Working Draft advancement and technical review under ISO/IEC JTC 1.
+
+⸻
+
+E. INTERNAL CORPORATE / DEFENSE DIRECTIVE VERSION
+
+(Operational, Enforceable)
+
+Directive Title
+
+Research Artefact Preservation Directive — Fixed-Point Reconstruction Engine (FPRE)
+
+Applicability
+
+This directive applies to:
+	•	advanced R&D programs,
+	•	long-horizon research initiatives,
+	•	safety-critical systems development,
+	•	classified or compartmentalized research environments.
+
+Mandatory Requirements
+
+All qualifying programs shall:
+	1.	Produce exactly one FPRE-conforming artefact per major research phase.
+	2.	Store all formal discoveries, proofs, and limits under FPRE segment grammar.
+	3.	Treat FPRE artefacts as authoritative over narrative documentation.
+	4.	Reject any reconstruction attempt that fails FPRE validation.
+
+Prohibited Practices
+
+The following are explicitly prohibited:
+	•	partial reconstructions presented as complete,
+	•	heuristic interpolation of missing research,
+	•	narrative justification replacing formal proof,
+	•	intent attribution or predictive claims in preserved artefacts.
+
+Audit and Enforcement
+
+Compliance shall be audited using the FPRE Conformance Checklist.
+Non-compliance constitutes a documentation integrity failure.
+
+⸻
+
+F. EXECUTIVE ONE-PAGE COMPLIANCE ABSTRACT
+
+(For leadership / oversight)
+
+What this is
+
+FPRE is a formal method for preserving essential research knowledge when full documentation cannot be reliably stored or transmitted.
+
+What it prevents
+	•	Loss of critical discoveries
+	•	Silent corruption of research history
+	•	False reconstruction under missing information
+
+What it guarantees
+	•	Either correct reconstruction or explicit refusal
+	•	Detection of omission
+	•	Long-term survivability of essential structure
+
+What it does not do
+	•	Predict outcomes
+	•	Preserve narrative context
+	•	Replace engineering judgment
+
+⸻
+
+G. OPERATIONAL USE RULE (CANONICAL)
+
+From this point forward:
+	•	All new frameworks, theories, or breakthroughs are preserved under FPRE.
+	•	Anything not expressible under FPRE is explicitly declared lost or excluded.
+	•	Silence is treated as correctness, not failure.
+
+This closes the memory problem without pretending memory is perfect.
+
+⸻

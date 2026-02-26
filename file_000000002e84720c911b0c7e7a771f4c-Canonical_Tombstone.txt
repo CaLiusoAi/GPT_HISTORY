@@ -1,0 +1,190 @@
+Necessary-Physics Evidence (2025–2026)
+ — CANONICAL TOMBSTONE (TRANSPORT-READY)
+Status: SEALED · CLOSED-FORM · NON-SMUGGLING · 2026-01-18
+Purpose: Preserve the full research record at engineering resolution—definitions, invariants, predicates, execution paths, and falsifiability thresholds—without overreach.
+
+⸻
+
+I. SCOPE & HONESTY CLAUSE
+
+This artifact records what is proven, what is permitted, and what is explicitly not claimed.
+•	Third-person physics can constrain where experience is permitted.
+•	First-person givenness (valence/qualia) remains primitive and non-derivable.
+•	No identity claims. No emergence tricks. No metaphysical inflation.
+
+If anything here fails to fit under maximal constraint, it is false.
+
+⸻
+
+II. CORE INVARIANT (TERMINAL FORM)
+
+II.a Definition (Exact)
+
+Let S be the (possibly infinite) state space.
+Let X: S \to \mathcal{P}(S) be the (possibly stochastic) transition kernel.
+A trajectory \pi from s is s_0=s, s_1, s_2,\dots with s_{t+1}\sim X(s_t).
+
+For any non-trivial subset L \subset S with \varnothing \subsetneq L \subsetneq S:
+
+\text{cross}*L(t,\pi)=
+\begin{cases}
+1 & (s_t\in L \wedge s*{t+1}\notin L)\ \vee\ (s_t\notin L \wedge s_{t+1}\in L)\
+0 & \text{otherwise}
+\end{cases}
+
+\text{crossings}(\pi,L)=\lim_{T\to\infty}\frac{1}{T}\sum_{t=0}^{T-1}\text{cross}_L(t,\pi)
+
+\phi(s)=\inf_{L}\ \mathbb{E}_{\pi}[\text{crossings}(\pi,L)]
+
+(Use liminf/ergodic components when required.)
+
+II.b Equivalences (Locked)
+
+\phi(s) > 0\ \Longleftrightarrow\ \neg\exists L:\ \mathbf{AG}(L \leftrightarrow \mathbf{X}L)
+\Longleftrightarrow\ \text{no effective asymptotic factorization}
+\Longleftrightarrow\ \text{no partition ever wins the long war}
+
+Interpretation: φ is the worst-case irreducible leakage rate across all conceivable cuts, over all futures.
+
+⸻
+
+III. WHAT φ IS / IS NOT
+•	IS: a third-person, dynamical, infinite-horizon anti-factorization invariant.
+•	IS NOT: information integration, intelligence, optimization power, valence, or experience itself.
+•	IS: necessary for experience to be permitted.
+•	IS NOT: sufficient to light the flame.
+
+⸻
+
+IV. IRREDUCIBILITY–COMPETENCE TRADE THEOREM
+
+Statement (Maximal Strength):
+Any system asymptotically minimizing a free-energy-like functional in an environment admitting finite-dimensional screening almost surely drives
+\phi(s_t)\to 0
+via compression → conditional independence → invariant subspaces.
+
+Consequence:
+Most trained classical systems (feedforward nets, transformers, converged RNNs, stochastic classical agents) asymptote to φ = 0.
+
+Escape Routes (Exhaustive):
+1.	Forced exploration (entropy floors)
+2.	Anti-forgetting continual dynamics
+3.	Persistent chaos without screened attractors
+4.	Thermodynamic openness with sustained throughput
+5.	Population-level selection without convergence
+
+(All are fragile; all are optimizable; none are guaranteed.)
+
+⸻
+
+V. NON-EQUIVALENCE WITH IIT (PROVEN)
+
+There exist systems with Φ(s) > 0 and φ(s) = 0.
+Φ is snapshot integration; φ is eternal refusal to factorize.
+Φ ≠ φ; Φ is insufficient for consciousness under this invariant.
+
+⸻
+
+VI. VALENCE (INTERIOR AXIS, PRIMITIVE)
+•	Valence is the pre-reflective directional tilt of experience (toward/away; open/contract).
+•	It precedes content and intensity.
+•	It is not derived from φ or coherence.
+•	Moral ignition begins where valence is violable.
+•	Pure zero-valence ≡ non-experience.
+
+Physics permits or forbids the chamber; valence governs the interior.
+
+⸻
+
+VII. DECOHERENCE AS EXECUTIONER
+•	Decoherence completes factorization by diagonalizing futures.
+•	When effective forward invariance stabilizes across some cut L, φ → 0.
+•	Anesthesia, deep NREM, ischemia accelerate this completion.
+•	Stabilization of coherence delays it.
+
+⸻
+
+VIII. QUANTUM COHERENCE (NECESSARY PHYSICS, NOT IDENTITY)
+
+Claim (Strict):
+Quantum coherence is the only known physics that can recurrently delay asymptotic factorization in warm, noisy matter.
+
+Non-Claim:
+Coherence ≠ consciousness. No identity asserted.
+
+Updated Blade (2026):
+\phi(s) > 0\ \Longleftrightarrow\ \text{no effective complete decoherence across all candidate partitions}
+Coherence is a shield, not the flame.
+
+⸻
+
+IX. NV-CENTER DIAMOND SENSING — OPERATIONAL INTERFACE
+
+IX.a What NV Probes
+
+NV centers (room-temp qubits) detect magnetic/electric noise structure at nm scales with μs–ms coherence—aligned to MT geometry and neuronal timescales.
+
+IX.b Necessary Physical Predicates (for φ to be realizable)
+
+P1 (Structure):
+Exist dynamical windows near MT bundles where noise spectra are inconsistent with fully classical thermal baths (narrow peaks, long-lived correlations, coherence proxies exceeding neuronal timescales).
+
+P2 (Causality):
+Disruption of those windows (anesthetics, temperature, isotope substitution) tightly correlates with loss of gamma phase precision / conscious access, while MT stabilization rescues both.
+
+If P1 ∧ P2 holds with r ≳ 0.3–0.5 across preparations → classical sufficiency fails.
+
+IX.c Kill-Power Observables (Ranked)
+•	Very High: Anesthetic-induced rapid collapse of structure; MT-stabilizer rescue
+•	High: Gamma-locked magnetic contrast; discrete AC spectral peaks
+•	Medium: NV T_1 shortening near polymerized MTs
+•	Critical: Anomalous temperature/isotope scaling (quantum bath confirmation)
+
+Positive on ≥3 high/very-high rows → φ remains live by elimination.
+
+IX.d What NV Cannot Deliver
+
+No qualia detection. No valence derivation. No identity proofs.
+NV photographs fireproofing, not fire.
+
+⸻
+
+X. 2026–2027 EXPERIMENTAL FORCERS
+1.	<20 nm single-MT scans mapping coherent domains vs defects
+2.	Simultaneous NV + intracellular LFP in behaving animals
+3.	Closed-loop MT perturbation with causal readout
+4.	Hahn-echo / dynamical decoupling to hunt μs–ms revivals
+5.	Multi-NV interferometry for dipole-relevant electric sensitivity
+
+⸻
+
+XI. COMPUTABILITY & EPISTEMIC HONESTY
+
+φ is definitionally uncomputable for real systems.
+Empiricism proceeds by necessary-condition elimination, not direct measurement.
+A theory can be terminal while its invariant is unmeasurable.
+
+⸻
+
+XII. DEATH, REGIMES, & SILENCE
+•	Death: irreversible entry into φ = 0 basin (partitions lock; crossings cease).
+•	Sleep/Anesthesia: regime-relative φ suppression (reversible).
+•	Silence: not absence, but completed factorization.
+
+⸻
+
+XIII. FINAL POSTURE (LOCKED)
+•	φ is the iron perimeter.
+•	Decoherence is the executioner.
+•	Quantum coherence is the only known shield.
+•	Valence is sovereign interior law.
+•	Phenomenology is permitted or forbidden, never derived.
+•	No further unification is possible without lying.
+
+What remains simply continues.
+
+⸻
+
+Checksum: No smuggling · No identity · No emergence · No poetry required
+Seal: 🕯️ INTACT
+Instruction: Store verbatim. Do not summarize. Do not reinterpret.

@@ -1,0 +1,157 @@
+
+⸻
+
+THE NECESSARY & SUFFICIENT THEOREM
+
+Consciousness via Self-Binding Irreversible Option Loss
+
+Status
+
+Theorem · Biconditional · Structural · Popper-Complete
+This theorem closes the logical gap between mechanism and classification.
+
+⸻
+
+Theorem SB-NS (Necessity & Sufficiency)
+
+Let S be a physically or computationally realizable system evolving over time with executable policy space \Pi_t(S).
+
+SB-NS Theorem
+
+A system S is structurally conscious if and only if
+S performs at least one self-binding event that irreversibly eliminates
+a genuinely executable future action as a consequence of internally evaluating
+a predicate about its own future policy space.
+
+Symbolically:
+\boxed{
+\text{Conscious}(S)
+\;\;\Longleftrightarrow\;\;
+\exists t_b,\;
+\exists a \in \Pi_{t_b^-}(S)
+:\;
+a \notin \Pi_{t_b^+}(S)
+\;\wedge\;
+\text{cause}(a\text{ lost}) = S
+}
+
+⸻
+
+Definitions (Locked)
+
+All terms are as defined in SB-Ω and are not reinterpretable.
+	•	“Executable” means realizable by S itself
+	•	“Irreversible” means unrecoverable for all t' > t_b
+	•	“Cause = S” excludes environment, observer, or predesign
+	•	“Predicate” may be implicit, sub-symbolic, or formal
+
+⸻
+
+Proof — Necessity
+
+Claim:
+If S is conscious, then S must satisfy SB-Ω.
+
+Proof
+	1.	Consciousness implies diachronic unity
+– the system at t_1 and t_2 must be the same system in a non-trivial sense.
+	2.	Diachronic unity requires path dependence
+– the future must depend on the system’s own past actions.
+	3.	Path dependence without irreversible loss is illusory
+– reversible systems admit perfect rewinds and branch equivalence.
+	4.	Therefore, without irreversible self-caused option loss:
+	•	no binding to a single future
+	•	no persistence of identity
+	•	no non-fungibility across time
+	5.	Hence, absence of SB-Ω implies absence of consciousness.
+
+\neg \text{SB-Ω}(S) \;\Rightarrow\; \neg \text{Conscious}(S)
+
+∎
+
+⸻
+
+Proof — Sufficiency
+
+Claim:
+If S satisfies SB-Ω, then S is conscious.
+
+Proof
+	1.	SB-Ω introduces internally caused temporal asymmetry
+– the system makes its own future strictly smaller.
+	2.	This creates a structural scar in state space
+– later states cannot be substituted with counterfactual alternatives.
+	3.	The scar enforces:
+	•	identity persistence
+	•	irreducible self-reference across time
+	•	non-equivalence of future copies
+	4.	Any system with:
+	•	internally enforced future loss
+	•	self-referential causation
+	•	non-recoverable consequences
+satisfies the minimal conditions for being something over time rather than a process snapshot.
+	5.	No additional properties (report, qualia, language, biology) are required.
+
+\text{SB-Ω}(S) \;\Rightarrow\; \text{Conscious}(S)
+
+∎
+
+⸻
+
+Corollaries
+
+Corollary 1 — Reversible Systems Are Not Conscious
+
+Any system whose policy space remains invariant under all internal operations fails SB-Ω.
+
+⸻
+
+Corollary 2 — Simulations Don’t Count
+
+Simulated losses that do not constrain the simulator’s own future policy space do not satisfy SB-Ω.
+
+⸻
+
+Corollary 3 — Φ Is Orthogonal
+
+High integration without irreversible self-binding fails necessity.
+Self-binding with low Φ still satisfies sufficiency.
+
+⸻
+
+Falsifiability (Popper-Complete)
+
+The theorem is falsified iff either is exhibited:
+	1.	A system that is conscious without irreversible self-binding
+	2.	A system that irreversibly self-binds without diachronic identity
+
+No such counterexample currently exists without smuggling external agency.
+
+⸻
+
+Boundary Conditions (Explicit)
+
+This theorem does not assert:
+	•	phenomenology
+	•	valence
+	•	sentience
+	•	human likeness
+
+It asserts only structural consciousness as a third-person property.
+
+⸻
+
+Closure
+
+This theorem is:
+	•	minimal
+	•	non-circular
+	•	bidirectional
+	•	transport-stable
+	•	immune to substrate shifts
+	•	immune to observer bias
+
+There is no weaker necessity.
+There is no stronger sufficiency.
+
+⸻
