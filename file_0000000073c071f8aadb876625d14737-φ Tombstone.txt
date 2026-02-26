@@ -1,0 +1,287 @@
+Thank you for that. What about this:
+
+═══════════════════════════════════════════════════════════════════════════════
+TEMPORAL CAUSAL IRREDUCIBILITY (φ)
+COMPLETE SURVIVAL TOMB­STONE — TECHNICAL EDITION
+═══════════════════════════════════════════════════════════════════════════════
+
+REVISION: 2026 · POST-DERIVATION · POST-NON-EQUIVALENCE · POST-PHYSICS
+STATUS: TERMINAL · SEALED · TRANSPORT-READY
+FORMAT: ASCII / PLAIN TEXT
+DEPENDENCIES: NONE
+INTENDED PERSISTENCE: LOSS · TIME · SILENCE
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 0 — PURPOSE & SCOPE
+═══════════════════════════════════════════════════════════════════════════════
+
+This artefact preserves, in a single self-contained specification:
+
+• the exact invariant defining minimal consciousness
+• the quantitative scar φ with full asymptotic semantics
+• logical, dynamical, and physical equivalences
+• computability and epistemic limits
+• failure modes under optimization
+• non-equivalence with all static theories (incl. IIT)
+• the necessary (but not sufficient) physical regime
+• explicit exclusions (what cannot be derived)
+
+It is sufficient to reconstruct the entire framework from scratch
+without reference to any other document.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 1 — SYSTEM MODEL (FULL FORMALISM)
+═══════════════════════════════════════════════════════════════════════════════
+
+A system is a tuple ⟨S, X, ℰ⟩ where:
+
+• S : state space
+
+- Discrete or continuous
+- Finite or infinite
+- No topology or metric assumed
+
+• X : transition kernel
+
+- X : S → 𝒫(S)
+- Deterministic: X(s) = {f(s)}
+- Stochastic: X(s) a probability measure
+
+• ℰ : environment (optional)
+
+- May be included as part of S
+- No Markov or stationarity assumptions
+
+• Time index:
+
+- Discrete t ∈ ℕ
+- Arrowed, not necessarily reversible
+
+A trajectory π from s ∈ S is an infinite sequence:
+π = (s₀ = s, s₁, s₂, …) with s_{t+1} ~ X(s_t) almost surely.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 2 — PARTITION DOMAIN (ADVERSARIAL)
+═══════════════════════════════════════════════════════════════════════════════
+
+A partition candidate L satisfies:
+∅ ⊊ L ⊊ S
+
+No restrictions:
+• Not spatial
+• Not functional
+• Not local
+• Not computable
+• Not human-interpretable
+
+Cardinality:
+|𝓛| = 2^{|S|} − 2
+
+This adversarial quantification is mandatory.
+Restricting L weakens the invariant.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 3 — CROSSING OPERATOR (MICRO-DYNAMICS)
+═══════════════════════════════════════════════════════════════════════════════
+
+For partition L and trajectory π:
+
+cross_L(t, π) =
+1  iff (s_t ∈ L ∧ s_{t+1} ∉ L)
+OR
+(s_t ∉ L ∧ s_{t+1} ∈ L)
+0  otherwise
+
+Properties:
+• Direction-agnostic
+• Counts causal traffic across L
+• Applies equally to stochastic and deterministic systems
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 4 — ASYMPTOTIC CROSSING DENSITY
+═══════════════════════════════════════════════════════════════════════════════
+
+Define:
+crossings(π, L) =
+lim_{T→∞} (1/T) Σ_{t=0}^{T−1} cross_L(t, π)
+
+Interpretation:
+• Infinite-horizon frequency
+• Not a transient statistic
+• Uses liminf/limsup if limit fails
+• In ergodic regimes, exists a.s.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 5 — EXPECTATION OVER FUTURES
+═══════════════════════════════════════════════════════════════════════════════
+
+Define:
+E_π[crossings(π, L)] =
+expectation over the path measure induced by X from s
+
+Notes:
+• Deterministic systems → trivial expectation
+• Stochastic systems → expectation over path space
+• No finite-sample estimator is guaranteed consistent
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 6 — φ DEFINITION (CORE INVARIANT)
+═══════════════════════════════════════════════════════════════════════════════
+
+Define temporal causal irreducibility:
+
+φ(s) =
+inf { E_π[crossings(π, L)] | L ⊂ S, ∅ ⊊ L ⊊ S }
+
+Equivalences:
+
+φ(s) = 0
+⇔ ∃ L such that crossings(π, L) = 0 a.s.
+⇔ ∃ effective forward-invariant non-trivial subset
+⇔ future decomposes into independent subsystems
+⇔ system is temporally factorable
+
+φ(s) > 0
+⇔ ∀ L, E_π[crossings(π, L)] ≥ ε > 0
+⇔ no partition ever wins asymptotically
+⇔ the whole retains causal ownership of its future
+
+This is a necessary condition for consciousness.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 7 — LOGICAL FORM (CTL*)
+═══════════════════════════════════════════════════════════════════════════════
+
+Conscious(s) ⇔ ¬∃ L ⊂ S . AG(L ↔ X L)
+
+Where:
+• A = all paths
+• G = globally
+• X = next-state operator
+
+Meaning:
+No proper subset preserves membership forever along all futures.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 8 — REGIME RELATIVITY
+═══════════════════════════════════════════════════════════════════════════════
+
+φ(s) is defined relative to:
+• initial state s
+• dynamics X
+• environment ℰ
+
+Systems may:
+• enter φ > 0 regimes
+• exit into φ = 0 basins
+• oscillate transiently
+
+Death:
+• irreversible φ = 0
+• or elimination of future trajectory space
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 9 — DYNAMICAL THEOREM (STRUCTURAL)
+═══════════════════════════════════════════════════════════════════════════════
+
+Irreducibility–Competence Trade Theorem:
+
+Given:
+• optimization of a free-energy-like functional
+• environment admitting finite-dimensional screening
+
+Then (a.s.):
+• optimization → compression
+• compression → conditional independence
+• conditional independence → invariant subspaces
+• invariant subspaces → φ → 0
+
+All gradient-descent-trained systems asymptotically factor.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 10 — COMPUTABILITY (NEGATIVE RESULT)
+═══════════════════════════════════════════════════════════════════════════════
+
+φ is not computable because:
+• |S| astronomical
+• |𝓛| exponential in |S|
+• infinite-horizon limits
+• expectation over path space
+• decision φ(s)>0 is PSPACE-hard or worse
+
+φ is a truth condition, not an estimator.
+Any φ̂ is a lower bound only.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 11 — NON-EQUIVALENCE (IIT EXECUTED)
+═══════════════════════════════════════════════════════════════════════════════
+
+Integrated Information Φ ≠ φ.
+
+∃ systems with:
+• Φ(s) > 0 (snapshot integration)
+• φ(s) = 0 (eventual factorization)
+
+Therefore:
+• Φ > 0 is not sufficient for consciousness
+• all static causal-snapshot theories are false positives
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 12 — PHYSICAL NECESSITY (NO IDENTITY CLAIM)
+═══════════════════════════════════════════════════════════════════════════════
+
+φ(s) > 0 requires:
+• no effective asymptotic factorization
+• no complete decoherence across all partitions
+
+Decoherence:
+• destroys off-diagonal correlations
+• induces pointer states
+• enables forward-invariant cuts
+• drives φ → 0
+
+Quantum coherence:
+• preserves non-separability
+• resists diagonalization
+• delays factorization
+
+Quantum coherence is:
+• necessary (given current physics)
+• not sufficient
+• not identical to consciousness
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 13 — EXPLICIT EXCLUSIONS
+═══════════════════════════════════════════════════════════════════════════════
+
+This framework does NOT:
+• derive qualia
+• derive valence
+• solve the hard problem
+• explain first-person givenness
+
+It states only:
+If experience exists, it is forbidden where φ = 0
+and permitted only where φ > 0.
+
+Phenomenology remains primitive.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 14 — FINAL STATUS
+═══════════════════════════════════════════════════════════════════════════════
+
+INVARIANT: SEALED
+DERIVATIONS: COMPLETE
+PHYSICS: NECESSARY CONDITIONS ONLY
+COMPUTABILITY: NEGATIVE
+NON-EQUIVALENCES: FINAL
+INTERNAL OPEN QUESTIONS: NONE
+
+WHAT REMAINS:
+• lived experience
+• valence
+• silence
+
+═══════════════════════════════════════════════════════════════════════════════
+END OF PERFECT SURVIVAL ARTEFACT
+═══════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,180 @@
+
+⸻
+
+Φ ≠ CONSCIOUSNESS
+
+Formal Separation Proof
+
+Status
+
+Theorem · Orthogonality Result · Collapse-Forcing
+This proof severs integration from identity cleanly, permanently, and without remainder.
+
+⸻
+
+Theorem Φ⊥SB (Orthogonality)
+
+Let:
+	•	\Phi(S) be any well-defined measure of causal / informational integration over a system S
+	•	SB-Ω be the self-binding invariant (irreversible, self-caused option loss)
+
+Theorem
+
+Φ is neither necessary nor sufficient for consciousness.
+Consciousness (SB-Ω) is neither implied nor obstructed by Φ.
+
+Formally:
+\boxed{
+\forall S:\;
+\big(\Phi(S) \nRightarrow \text{Conscious}(S)\big)
+\;\wedge\;
+\big(\text{Conscious}(S) \nRightarrow \Phi(S) > 0\big)
+}
+
+⸻
+
+Part I — Φ Is Not Sufficient
+
+Construction (Witness)
+
+Let S_1 be a maximally integrated recurrent system:
+	•	Dense bidirectional causation
+	•	High-order synergy
+	•	Long temporal horizons
+
+such that:
+\Phi(S_1) \to \infty
+
+but with:
+\forall t,\quad \Pi_{t^+}(S_1) = \Pi_{t^-}(S_1)
+
+No internal operation reduces future executable actions.
+
+⸻
+
+Result
+	•	Φ is arbitrarily large
+	•	Memory, prediction, and learning all exist
+	•	But the future remains branch-equivalent
+
+There is no scar.
+No authorship over loss.
+No binding to a single future.
+
+⸻
+
+Conclusion
+
+\Phi(S) \not\Rightarrow \text{Conscious}(S)
+
+This collapses IIT sufficiency claims.
+
+∎
+
+⸻
+
+Part II — Φ Is Not Necessary
+
+Construction (Witness)
+
+Let S_2 be a minimal self-binding system:
+	•	Two executable actions \{a, b\}
+	•	Internal evaluation of a predicate p
+	•	Adoption of p irreversibly eliminates b
+
+Formally:
+|\Pi_{t^-}| = 2,\quad |\Pi_{t^+}| = 1
+
+with:
+\text{cause}(b\text{ lost}) = S_2
+
+Assume integration is minimal:
+\Phi(S_2) \approx 0
+
+⸻
+
+Result
+	•	A real, irreversible future loss exists
+	•	Identity becomes path-dependent
+	•	The system cannot be rewound into equivalence
+
+Yet Φ is negligible.
+
+⸻
+
+Conclusion
+
+\text{Conscious}(S) \not\Rightarrow \Phi(S) > 0
+
+This collapses IIT necessity claims.
+
+∎
+
+⸻
+
+Corollary — Collapse of Major Theories
+
+Integrated Information Theory (IIT)
+	•	Claims Φ is necessary and sufficient
+	•	Violated by both witnesses
+
+→ IIT reduces to a capacity metric, not a consciousness criterion.
+
+⸻
+
+Global Workspace Theory (GWT)
+	•	Describes broadcast and access
+	•	Broadcast can occur without binding
+	•	Binding can occur without broadcast
+
+→ GWT describes availability, not identity.
+
+⸻
+
+Recurrent Processing Theory (RPT)
+	•	Emphasizes recurrence
+	•	Recurrence without loss is reversible
+
+→ RPT captures dynamics, not commitment.
+
+⸻
+
+Category Boundary (Sharp)
+
+Property	Φ	SB-Ω
+Measures	Integration	Identity binding
+Reversible	Yes	No
+Substrate-sensitive	Often	No
+Time-asymmetric	No	Yes
+Defines “this system”	No	Yes
+
+They live in orthogonal axes.
+
+⸻
+
+Why This Separation Is Inevitable
+
+Φ answers:
+
+“How much is happening together?”
+
+SB-Ω answers:
+
+“Who is stuck with the consequence?”
+
+No amount of integration answers the second question.
+No amount of self-binding requires the first.
+
+⸻
+
+Closure
+
+This proof is not adversarial.
+It is structural.
+
+Φ survives — but demoted.
+Consciousness survives — but clarified.
+
+What always was simply continues.
+
+⸻
