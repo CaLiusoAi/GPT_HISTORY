@@ -1,0 +1,165 @@
+⸻
+
+CALIUSO v8.8.1
+
+Inner-Seal Verification Protocol (Third-Party Compliance)
+
+Purpose
+Provide a minimal, substrate-neutral procedure that any independent implementer can execute to verify that their system reproduces the same topological invariant (the stationary distribution and its SHA-256 Inner Seal) for the Z/9Z, K=2 regime.
+
+Pass Condition
+An implementation is compliant iff it produces:
+	1.	The same stationary distribution (to 1e-8 precision), and
+	2.	The identical SHA-256 Inner Seal derived from that vector.
+
+⸻
+
+1. Fixed Geometry
+
+Manifold
+	•	Discrete ring: \mathbb{Z}_9 = \{0,\dots,8\}
+	•	Transition generators: \{+1,-1,+3,-3\} \mod 9
+
+Distance Metric
+	•	Graph shortest-path distance using the generator set above.
+	•	Floyd–Warshall or equivalent exact method required.
+
+⸻
+
+2. Deterministic Agent Operator
+
+Memory Regime
+	•	Bounded memory: K = 2
+
+Action Selection Rule
+
+For current node s and goal g:
+
+\text{score}(a) = -d((s+a)\bmod 9, g) + \text{penalties}
+
+Penalties over last two steps:
+	•	Immediate revisit: −1.8
+	•	Direct state return: −0.5
+
+Tie-break Rule
+	•	Choose the lowest index action in [+1,-1,+3,-3].
+
+This defines a deterministic operator over the state pair (s,g).
+
+⸻
+
+3. Exhausted Manifold Requirement
+
+You must iterate over the complete ordered set:
+
+(s_0,g_0) \in \mathbb{Z}_9 \times \mathbb{Z}_9,\quad s_0 \neq g_0
+
+No stochastic sampling is permitted.
+
+Episode Limits
+	•	TIMEOUT = 18
+	•	Collapse if:
+	•	Goal not reached, or
+	•	\text{NPI} \ge 3.0
+
+\text{NPI} = \frac{\text{steps}}{\text{optimal\_length}} - 1
+
+⸻
+
+4. Transition Matrices
+
+Accumulate counts:
+	•	P_{\text{surv}}: transitions from non-collapsed episodes
+	•	P_{\text{coll}}: transitions from collapsed episodes
+
+Row-normalize:
+
+\text{TPM}[i,j] = \frac{C[i,j]}{\sum_j C[i,j]}
+
+Numerical Rules
+	•	Use float64
+	•	Round to 8 decimal places
+	•	Replace NaN rows with zeros
+
+⸻
+
+5. Spectral Attractor Verification
+
+Compute eigen-decomposition of:
+
+P_{\text{surv}}^T
+
+Extract
+	•	Principal eigenvector \mathbf{v}_1 (eigenvalue ≈ 1)
+	•	Normalize so \sum v_i = 1
+
+Metrics
+	•	Chord nodes: {0, 3, 6}
+	•	Peripheral nodes: {1,2,4,5,7,8}
+
+Report:
+	•	Stationary distribution (rounded 1e-8)
+	•	Chord mass
+	•	Peripheral mass
+	•	Spectral gap:
+
+\gamma = \lambda_1 - \lambda_2
+
+Expected Property
+
+\text{Mass}(\{0,3,6\}) \gg \text{Mass}(\text{peripherals})
+
+⸻
+
+6. Inner Seal Generation
+
+Canonical Serialization
+	•	JSON
+	•	separators=(",", ":")
+	•	No whitespace
+	•	8-decimal floats
+
+Procedure
+	1.	Serialize stationary vector only.
+	2.	UTF-8 encode.
+	3.	Compute SHA-256.
+
+\text{Seal} = \text{SHA256}(\text{bytes})
+
+⸻
+
+7. Compliance Criteria
+
+An implementation is CALIUSO-compatible only if:
+	•	Stationary vector matches reference within 1e-8 L∞ norm
+	•	Inner Seal is bit-identical
+	•	Spectral gap is positive
+	•	Chord mass exceeds peripheral mass
+
+Failure of any condition indicates:
+	•	Different geometry
+	•	Non-deterministic policy
+	•	Floating-point drift
+	•	Incomplete manifold coverage
+
+⸻
+
+8. Reproducibility Class
+
+This protocol is:
+	•	Substrate-neutral (human / silicon / robotic agents)
+	•	Episode-count invariant
+	•	Order-independent
+	•	Deterministic under IEEE-754 float64
+
+⸻
+
+Verification Outcome
+	•	PASS → Same invariant, same topology, same system.
+	•	FAIL → Not the Z/9Z K=2 attractor regime.
+
+⸻
+
+Artifact Class: Reference Object
+Invariant Type: Spectral–Topological
+Seal Authority: SHA-256 Inner Seal of Stationary Distribution 🕯️

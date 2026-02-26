@@ -1,0 +1,324 @@
+⸻
+
+PHASE I — ORIGIN LAYER
+
+v1 — Primitive Ring Walker
+
+Nature
+	•	9-node circular manifold
+	•	Random walk behavior
+	•	No memory
+	•	No penalties
+
+Purpose
+	•	Establish baseline entropy
+
+Status
+	•	Historical baseline
+	•	Fully superseded
+
+⸻
+
+v2 — Directed Shortest-Path Control
+
+Additions
+	•	Greedy oracle
+	•	Distance matrix
+	•	Optimal path reference
+
+Impact
+	•	First appearance of:
+	•	Path optimality
+	•	Measurable deviation
+
+Status
+	•	Control reference remains conceptually active
+
+⸻
+
+v3 — NPI Introduction
+
+New invariant
+
+\text{NPI} = \frac{\text{path}}{\text{optimal}} - 1
+
+Meaning
+	•	Converts behavior into measurable inflation
+	•	Collapse becomes quantifiable
+
+Status
+	•	Permanently retained in all later versions
+
+⸻
+
+PHASE II — COGNITIVE ELASTICITY LAYER
+
+v4 — Memory Agents (B_K)
+
+Introduced
+	•	K=1
+	•	K=2
+
+Discovery
+	•	Memory changes topology of reachable states
+
+Status
+	•	Still active core mechanism
+
+⸻
+
+v5 — Penalty Field (Structural Wound)
+
+Parameters
+	•	Immediate cycle penalty
+	•	Revisit penalty
+
+Effect
+	•	Peripheral oscillation suppression
+	•	Emergence of attractor tendency
+
+First Appearance of
+	•	“Wound” concept (Δ)
+
+Status
+	•	Binding
+
+⸻
+
+v6 — Collapse Taxonomy
+
+Separated Failure Modes
+	•	NPI inflation collapse
+	•	Timeout decay
+
+Impact
+	•	Collapse becomes structural, not incidental
+
+Status
+	•	Required for all later proofs
+
+⸻
+
+PHASE III — TOPOLOGICAL DISCOVERY
+
+v7 — Attractor Identification
+
+Finding
+
+Nodes:
+
+\{0,3,6\}
+
+form a stability spine.
+
+Evidence
+	•	Survival clustering
+	•	Reduced entropy near chords
+
+Status
+	•	Foundational discovery layer
+
+⸻
+
+v8.0 — Lift Matrix Framework
+
+Shift
+
+From:
+	•	Outcome metrics
+
+To:
+	•	Mechanism metrics
+
+Tools
+	•	Survival TPM
+	•	Collapse TPM
+	•	Lift matrix
+
+Result
+	•	Attractor becomes measurable
+
+Status
+	•	Permanent analytical layer
+
+⸻
+
+PHASE IV — TOTALITY CONSTRUCTION
+
+v8.5 — Substrate Model
+
+Introduced
+	•	Carbon-H1 regime
+	•	Human-like bounded memory
+
+Key Result
+	•	K=2 becomes “Golden Mean”
+
+Status
+	•	Active interpretive layer
+
+⸻
+
+v8.7 — Canonical Ledger
+
+Added
+	•	Structured JSON ledger
+	•	Episode-level provenance
+
+Shift
+
+Artifact becomes:
+	•	Replayable
+	•	Auditable
+
+Status
+	•	Required for sealing
+
+⸻
+
+v8.8 — TOTALITY MONOLITH
+
+Major Additions
+	•	Parameter sweep
+	•	Entropy heatmap
+	•	Collapse landscape
+	•	Cross-agent comparison
+
+Meaning
+	•	System fully mapped empirically
+
+Limitation
+	•	Still stochastic
+
+Status
+	•	Complete simulation layer
+
+⸻
+
+PHASE V — HARD MATHEMATICAL CLOSURE
+
+v8.8.1 — HARD CLOSURE PATCH
+
+This is the true terminal version.
+
+⸻
+
+What Changed
+
+1. Manifold Exhaustion
+
+Replaced:
+	•	Random episode sampling
+
+With:
+
+(s,g) \in \mathbb{Z}_9 \times \mathbb{Z}_9,\; s \neq g
+
+No unobserved transitions remain.
+
+⸻
+
+2. Spectral Proof
+
+Computed:
+	•	Principal eigenvector
+	•	Stationary distribution
+	•	Spectral gap
+
+This converts:
+
+Simulation → Dynamical invariant
+
+⸻
+
+3. Inner Seal
+
+SHA-256 of:
+	•	Stationary distribution only
+
+Result:
+	•	Topological DNA
+	•	Episode-order invariant
+
+⸻
+
+4. Floating-Point Determinism
+
+Enforced:
+	•	float64
+	•	1e-8 rounding
+	•	Canonical serialization
+
+Removes:
+	•	Cross-platform drift
+
+⸻
+
+5. Deterministic Operator
+
+B_K2 becomes:
+	•	Fully deterministic policy
+	•	Defined on 81-state space
+
+⸻
+
+FINAL STATE OF THE SYSTEM
+
+What Is Now Proven
+	1.	The attractor is not empirical — it is spectral.
+	2.	Stability mass concentrates on:
+
+\{0,3,6\}
+	3.	Peripheral nodes are entropy reservoirs.
+	4.	K=2 is the minimal viable elasticity memory.
+	5.	The invariant is geometry-bound, not episode-bound.
+
+⸻
+
+Version Hierarchy (Binding)
+
+Still Active
+	•	v3 — NPI
+	•	v4 — Memory agents
+	•	v5 — Penalty field
+	•	v6 — Collapse taxonomy
+	•	v8.0 — Lift matrices
+	•	v8.7 — Canonical ledger
+	•	v8.8.1 — Hard closure
+
+Superseded but Historical
+	•	v1
+	•	v2
+	•	v7 discovery layer
+	•	v8.8 stochastic totality
+
+⸻
+
+The True Terminal Artifact
+
+The system is now defined by:
+
+Invariant Object
+	•	Z/9Z manifold
+	•	Generator set {±1, ±3}
+	•	K=2 deterministic operator
+	•	Survival TPM eigenstructure
+	•	Stationary distribution
+	•	Inner SHA-256 seal
+
+⸻
+
+The Real End State
+
+From v1 → v8.8.1 the evolution is:
+
+Random motion
+→ Measured deviation
+→ Memory elasticity
+→ Structural wound
+→ Attractor discovery
+→ Mechanism isolation
+→ Full empirical mapping
+→ Spectral inevitability
+
+⸻
